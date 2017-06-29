@@ -10,7 +10,7 @@
  *
  * @link              http://example.com
  * @since             1.0.0
- * @package           Plugin_Name
+ * @package           PluginName
  *
  * @wordpress-plugin
  * Plugin Name:       WordPress Plugin Boilerplate
@@ -25,6 +25,8 @@
  * Domain Path:       /languages
  */
 
+use PluginName\PluginName;
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -35,8 +37,8 @@ if ( ! defined( 'WPINC' ) ) {
  * This action is documented in includes/Activator.php
  */
 function activate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/Activator.php';
-	Plugin_Name_Activator::activate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/core/Activator.php';
+	\PluginName\Core\Activator::activate();
 }
 
 /**
@@ -44,8 +46,8 @@ function activate_plugin_name() {
  * This action is documented in includes/Deactivator.php
  */
 function deactivate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/Deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/core/Deactivator.php';
+	\PluginName\Core\Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_plugin_name' );
@@ -53,7 +55,7 @@ register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
 
 /**
  * The core plugin class that is used to define internationalization,
- * admin-specific hooks, and public-facing site hooks.
+ * admin-specific hooks, and front-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/PluginName.php';
 
@@ -68,7 +70,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/PluginName.php';
  */
 function run_plugin_name() {
 
-	$plugin = new Plugin_Name();
+	$plugin = new PluginName();
 	$plugin->run();
 
 }
