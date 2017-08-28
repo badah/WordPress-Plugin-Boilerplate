@@ -37,7 +37,7 @@ if ( ! defined( 'WPINC' ) ) {
  * This action is documented in includes/Activator.php
  */
 function activate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/core/Activator.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/Core/Activator.php';
 	\PluginName\Core\Activator::activate();
 }
 
@@ -46,7 +46,7 @@ function activate_plugin_name() {
  * This action is documented in includes/Deactivator.php
  */
 function deactivate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/core/Deactivator.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/Core/Deactivator.php';
 	\PluginName\Core\Deactivator::deactivate();
 }
 
